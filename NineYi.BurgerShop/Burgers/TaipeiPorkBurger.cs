@@ -14,6 +14,9 @@ namespace NineYi.BurgerShop.Burgers
         public TaipeiPorkBurger()
         {
             this.Name = "Taipei Pork Burger";
+            this.Bread = Factory.MaterialFactory.Factory.GetMaterial("NineYi.BurgerShop.Breads.WhiteBread") as Breads.Bread;
+            this.Veggie = Factory.MaterialFactory.Factory.GetMaterial("NineYi.BurgerShop.Veggies.Tomato") as Veggies.Veggie;
+            this.Meat = Factory.MaterialFactory.Factory.GetMaterial("NineYi.BurgerShop.Meats.Tenderloin") as Meats.Meat;
         }
     }
 }

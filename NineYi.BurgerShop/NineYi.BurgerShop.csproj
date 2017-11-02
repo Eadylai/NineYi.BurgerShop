@@ -51,6 +51,9 @@
     <Compile Include="Burgers\NewYorkPorkBurger.cs" />
     <Compile Include="Burgers\TaipeiChickenBurger.cs" />
     <Compile Include="Burgers\TaipeiPorkBurger.cs" />
+    <Compile Include="Factory\BurgerFactory.cs" />
+    <Compile Include="Factory\IMaterial.cs" />
+    <Compile Include="Log\LogAdapter.cs" />
     <Compile Include="Meats\Bacon.cs" />
     <Compile Include="Meats\Meat.cs" />
     <Compile Include="Meats\TaiwanChicken.cs" />
@@ -61,6 +64,7 @@
     <Compile Include="Veggies\Onion.cs" />
     <Compile Include="Veggies\Tomato.cs" />
     <Compile Include="Veggies\Veggie.cs" />
+    <Compile Include="Factory\MaterialFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
