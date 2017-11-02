@@ -9,7 +9,7 @@ namespace NineYi.BurgerShop.Meats
     /// <summary>
     /// 肉類
     /// </summary>
-    public class Meat
+    public class Meat : Factory.IMaterial
     {
         public string Name { get; set; }
 

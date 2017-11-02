@@ -15,57 +15,37 @@ namespace NineYi.BurgerShop
         static void Main(string[] args)
         {
             //// 1. 使用者點餐
-
-            Console.Write("Which shop do you like? (1)Taipei (2)NewYork: ");
+            Log.LogAdapter.Log("Which shop do you like? (1)Taipei (2)NewYork: ");
             int shopChoice = int.Parse(Console.ReadLine());
 
-            Console.Write("What burger would you like? (1)Chicken (2)Pork: ");
+            Log.LogAdapter.Log("What burger would you like? (1)Chicken (2)Pork: ");
             int burgerChoice = int.Parse(Console.ReadLine());
 
             //// 2. 準備漢堡
-
             Burger burger = null;
-
-            if (shopChoice == 1 && burgerChoice == 1)
+            string shopName = "Taipei";
+            string burgerName = "Chicken";
+            if (shopChoice == 2)
             {
-                burger = new TaipeiChickenBurger();
-
-                //// 備料
-                burger.Bread = new WhiteBread();
-                burger.Veggie = new Tomato();
-                burger.Meat = new TaiwanChicken();
+                shopName = "NewYork";
             }
-            else if (shopChoice == 1 && burgerChoice == 2)
+            if (burgerChoice == 2)
             {
-                burger = new TaipeiPorkBurger();
-
-                //// 備料
-                burger.Bread = new WhiteBread();
-                burger.Veggie = new Tomato();
-                burger.Meat = new Tenderloin();
-            }
-            else if (shopChoice == 2 && burgerChoice == 1)
-            {
-                burger = new NewYorkChickenBurger();
-
-                //// 備料
-                burger.Bread = new WheatBread();
-                burger.Veggie = new Onion();
-                burger.Meat = new Turkey();
-            }
-            else if(shopChoice == 2 && burgerChoice == 2)
-            {
-                burger = new NewYorkPorkBurger();
-
-                //// 備料
-                burger.Bread = new WheatBread();
-                burger.Veggie = new Onion();
-                burger.Meat = new Bacon();
+                burgerName = "Pork";
             }
 
-            //// 3. 烹飪漢堡
+            using (Factory.BurgerFactory burgerFactory = new Factory.BurgerFactory())
+            {
+                Log.LogAdapter.Log("");
+                Log.LogAdapter.Log("Please!Wait!!");
+                Log.LogAdapter.Log("");
+                burger = burgerFactory.GetBurger(shopName, burgerName);
+                burger.Cook();
+            }
 
-            burger.Cook();
+            Log.LogAdapter.Log("");
+            Log.LogAdapter.Log("Press Any Key To Exit...!");
+            Console.ReadLine();
         }
     }
 }

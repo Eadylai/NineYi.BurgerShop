@@ -9,7 +9,7 @@ namespace NineYi.BurgerShop.Breads
     /// <summary>
     /// 麵包類
     /// </summary>
-    public class Bread
+    public class Bread : Factory.IMaterial
     {
         public string Name { get; set; }
 

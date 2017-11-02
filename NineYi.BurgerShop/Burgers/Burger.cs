@@ -21,9 +21,9 @@ namespace NineYi.BurgerShop.Burgers
         /// </summary>
         public void Cook()
         {
-            Console.WriteLine("Cooking {0}! Bread used:{1}, Veggie used:{2}, Meat used:{3}...", this.Name, this.Bread, this.Veggie, this.Meat);
-
-            Console.WriteLine("Your {0} is ready. Enjoy it!", this.Name);
+            Log.LogAdapter.Log(string.Format("Cooking {0}! Bread used:{1}, Veggie used:{2}, Meat used:{3}...", this.Name, this.Bread, this.Veggie, this.Meat));
+            Log.LogAdapter.Log("");
+            Log.LogAdapter.Log(string.Format("Your {0} is ready. Enjoy it!", this.Name));
         }
     }
 }
